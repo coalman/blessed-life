@@ -1,5 +1,6 @@
 'use strict';
 
+var program = require('commander');
 var blessed = require('blessed');
 var fs = require('fs');
 var path = require('path');
@@ -8,7 +9,16 @@ var Game = require(lib + '/game.js');
 var Board = require(lib + '/board.js');
 var StringRenderer = require(lib + '/string_renderer');
 
-var board = new Board(20, 10);
+program
+	.version('0.0.0')
+	.option('-w, --width <width>', 
+		'specify the width of the grid', parseInt, 20)
+	.option('-h, --height <height>', 
+		'specify the height of the grid', parseInt, 10)
+	.option('-c, --config <path>', 'specify the config file to read from')
+	.parse(process.argv);
+
+var board = new Board(program.width, program.height);
 board.setCell(1, 0, true);
 board.setCell(1, 1, true);
 board.setCell(1, 2, true);
