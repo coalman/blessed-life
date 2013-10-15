@@ -6,12 +6,14 @@ var path = require('path');
 var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
 var Game = require(lib + '/game.js');
 var Board = require(lib + '/board.js');
+var StringRenderer = require(lib + '/string_renderer');
 
 var board = new Board(20, 10);
 board.setCell(1, 0, true);
 board.setCell(1, 1, true);
 board.setCell(1, 2, true);
 var game = new Game(board);
+var boardRenderer = new StringRenderer();
 
 // Create a screen object.
 var screen = blessed.screen();
@@ -30,24 +32,14 @@ var box = blessed.box({
   }
 });
 
-function renderBoard(board) {
-	var s = '';
-	for (var y = 0; y < board.height; y++) {
-		for (var x = 0; x < board.width; x++) {
-			s += (board.isAlive(x, y) ? '1' : '0');
-		}
-		s += '\n';
-	}
-	return s;
-}
-box.setContent(renderBoard(board));
+box.setContent(boardRenderer.render(board));
 
 // Append our box to the screen.
 screen.append(box);
 
-screen.key(['space'], function(ch, key) {
+screen.key(['space', 'enter'], function(ch, key) {
 	game.tick();
-	box.setContent(renderBoard(game.board));
+	box.setContent(boardRenderer.render(game.board));
 	screen.render();
 });
 
