@@ -12,16 +12,20 @@ var StringRenderer = require(lib + '/string_renderer');
 program
 	.version('0.0.0')
 	.option('-w, --width <width>', 
-		'specify the width of the grid', parseInt, 20)
+		'specify the width of the grid', parseInt, -1)
 	.option('-h, --height <height>', 
-		'specify the height of the grid', parseInt, 10)
-	.option('-c, --config <path>', 'specify the config file to read from')
+		'specify the height of the grid', parseInt, -1)
+	.option('-c, --config <path>', 'specify the config file to read from',
+		'../examples/blinker.json')
 	.parse(process.argv);
+program.config = path.join(path.dirname(fs.realpathSync(__filename)), program.config);
+var json = fs.readFileSync(program.config, { encoding: 'utf-8' });
+var configData = JSON.parse(json);
 
-var board = new Board(program.width, program.height);
-board.setCell(1, 0, true);
-board.setCell(1, 1, true);
-board.setCell(1, 2, true);
+var board = new Board(configData.width, configData.height);
+configData.liveCells.forEach(function(liveCell) {
+	board.setCell(liveCell[0], liveCell[1], true);
+});
 var game = new Game(board);
 var boardRenderer = new StringRenderer();
 
