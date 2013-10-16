@@ -18,7 +18,7 @@ program
 	.option('-c, --config <path>', 'specify the config file to read from',
 		'../examples/blinker.json')
 	.parse(process.argv);
-program.config = path.join(path.dirname(fs.realpathSync(__filename)), program.config);
+program.config = path.resolve(path.dirname(fs.realpathSync(__filename)), program.config);
 var json = fs.readFileSync(program.config, { encoding: 'utf-8' });
 var configData = JSON.parse(json);
 
