@@ -8,6 +8,7 @@ var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
 var Game = require(lib + '/game.js');
 var Board = require(lib + '/board.js');
 var StringRenderer = require(lib + '/string_renderer');
+var Ticker = require(lib + '/ticker.js');
 
 program
 	.version('0.0.0')
@@ -46,15 +47,27 @@ var box = blessed.box({
   }
 });
 
+var ticker = new Ticker(250, function onTick() {
+	game.tick();
+	box.setContent(boardRenderer.render(game.board));
+	screen.render();
+});
+
 box.setContent(boardRenderer.render(board));
 
 // Append our box to the screen.
 screen.append(box);
 
-screen.key(['space', 'enter'], function(ch, key) {
-	game.tick();
-	box.setContent(boardRenderer.render(game.board));
-	screen.render();
+screen.key(['space'], function(ch, key) {
+	if (!ticker.running) {
+		game.tick();
+		box.setContent(boardRenderer.render(game.board));
+		screen.render();
+	}
+});
+
+screen.key(['enter'], function(ch, key) {
+	ticker.toggle();
 });
 
 // Quit on Escape, q, or Control-C.
