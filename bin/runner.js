@@ -9,7 +9,7 @@ var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
 var Ticker = require(lib + '/ticker.js');
 var App = require(lib + '/app.js');
 
-process.argv[1] = 'blessed-life';
+program._name = 'blessed-life';
 program
 	.option('--width <width>', 
 		'specify the width of the grid', parseInt, 0)
