@@ -1,0 +1,147 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/bin/npm', 'publish' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.20
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /home/coalman/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz
+12 verbose folder .
+13 silly lockFile 1f1177db-tar tar://.
+14 verbose lock tar://. /home/coalman/.npm/1f1177db-tar.lock
+15 silly lockFile 4f512d6d-93546-0-6398171363398433-tmp-tgz tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz
+16 verbose lock tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz /home/coalman/.npm/4f512d6d-93546-0-6398171363398433-tmp-tgz.lock
+17 silly lockFile 1f1177db-tar tar://.
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 4f512d6d-93546-0-6398171363398433-tmp-tgz tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz
+20 silly lockFile 4f512d6d-93546-0-6398171363398433-tmp-tgz tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz
+21 verbose tar unpack /home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz
+22 silly lockFile e3a637be-93546-0-6398171363398433-package tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/package
+23 verbose lock tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/package /home/coalman/.npm/e3a637be-93546-0-6398171363398433-package.lock
+24 silly lockFile 4f512d6d-93546-0-6398171363398433-tmp-tgz tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz
+25 verbose lock tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz /home/coalman/.npm/4f512d6d-93546-0-6398171363398433-tmp-tgz.lock
+26 silly gunzTarPerm modes [ '755', '644' ]
+27 silly gunzTarPerm extractEntry package.json
+28 silly gunzTarPerm extractEntry .npmignore
+29 silly gunzTarPerm extractEntry README.md
+30 silly gunzTarPerm extractEntry index.js
+31 silly gunzTarPerm extractEntry bin/runner.js
+32 silly gunzTarPerm extractEntry example/blinker.json
+33 silly gunzTarPerm modified mode [ 'example/blinker.json', 438, 420 ]
+34 silly gunzTarPerm extractEntry lib/app.js
+35 silly gunzTarPerm extractEntry lib/board.js
+36 silly gunzTarPerm extractEntry lib/game.js
+37 silly gunzTarPerm extractEntry lib/string_renderer.js
+38 silly gunzTarPerm extractEntry lib/ticker.js
+39 silly gunzTarPerm modified mode [ 'lib/ticker.js', 438, 420 ]
+40 silly lockFile e3a637be-93546-0-6398171363398433-package tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/package
+41 silly lockFile e3a637be-93546-0-6398171363398433-package tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/package
+42 silly lockFile 4f512d6d-93546-0-6398171363398433-tmp-tgz tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz
+43 silly lockFile 4f512d6d-93546-0-6398171363398433-tmp-tgz tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/tmp.tgz
+44 verbose tar pack [ '/home/coalman/.npm/blessed-life/1.0.1/package.tgz',
+44 verbose tar pack   '/home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/package' ]
+45 verbose tarball /home/coalman/.npm/blessed-life/1.0.1/package.tgz
+46 verbose folder /home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/package
+47 silly lockFile e3a637be-93546-0-6398171363398433-package tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/package
+48 verbose lock tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/package /home/coalman/.npm/e3a637be-93546-0-6398171363398433-package.lock
+49 silly lockFile b78e69ba-m-blessed-life-1-0-1-package-tgz tar:///home/coalman/.npm/blessed-life/1.0.1/package.tgz
+50 verbose lock tar:///home/coalman/.npm/blessed-life/1.0.1/package.tgz /home/coalman/.npm/b78e69ba-m-blessed-life-1-0-1-package-tgz.lock
+51 silly lockFile e3a637be-93546-0-6398171363398433-package tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/package
+52 silly lockFile e3a637be-93546-0-6398171363398433-package tar:///home/coalman/tmp/npm-9966-UDwZA04-/1382038093546-0.6398171363398433/package
+53 silly lockFile b78e69ba-m-blessed-life-1-0-1-package-tgz tar:///home/coalman/.npm/blessed-life/1.0.1/package.tgz
+54 silly lockFile b78e69ba-m-blessed-life-1-0-1-package-tgz tar:///home/coalman/.npm/blessed-life/1.0.1/package.tgz
+55 silly lockFile 539ebddc-n-npm-blessed-life-1-0-1-package /home/coalman/.npm/blessed-life/1.0.1/package
+56 verbose lock /home/coalman/.npm/blessed-life/1.0.1/package /home/coalman/.npm/539ebddc-n-npm-blessed-life-1-0-1-package.lock
+57 silly lockFile 539ebddc-n-npm-blessed-life-1-0-1-package /home/coalman/.npm/blessed-life/1.0.1/package
+58 silly lockFile 539ebddc-n-npm-blessed-life-1-0-1-package /home/coalman/.npm/blessed-life/1.0.1/package
+59 verbose tar unpack /home/coalman/.npm/blessed-life/1.0.1/package.tgz
+60 silly lockFile 56a6ea0b-n-npm-blessed-life-1-0-1-package tar:///home/coalman/.npm/blessed-life/1.0.1/package
+61 verbose lock tar:///home/coalman/.npm/blessed-life/1.0.1/package /home/coalman/.npm/56a6ea0b-n-npm-blessed-life-1-0-1-package.lock
+62 silly lockFile b78e69ba-m-blessed-life-1-0-1-package-tgz tar:///home/coalman/.npm/blessed-life/1.0.1/package.tgz
+63 verbose lock tar:///home/coalman/.npm/blessed-life/1.0.1/package.tgz /home/coalman/.npm/b78e69ba-m-blessed-life-1-0-1-package-tgz.lock
+64 silly gunzTarPerm modes [ '755', '644' ]
+65 silly gunzTarPerm extractEntry package.json
+66 silly gunzTarPerm extractEntry .npmignore
+67 silly gunzTarPerm extractEntry README.md
+68 silly gunzTarPerm extractEntry index.js
+69 silly gunzTarPerm extractEntry bin/runner.js
+70 silly gunzTarPerm extractEntry example/blinker.json
+71 silly gunzTarPerm extractEntry lib/app.js
+72 silly gunzTarPerm extractEntry lib/board.js
+73 silly gunzTarPerm extractEntry lib/game.js
+74 silly gunzTarPerm extractEntry lib/string_renderer.js
+75 silly gunzTarPerm extractEntry lib/ticker.js
+76 silly lockFile 56a6ea0b-n-npm-blessed-life-1-0-1-package tar:///home/coalman/.npm/blessed-life/1.0.1/package
+77 silly lockFile 56a6ea0b-n-npm-blessed-life-1-0-1-package tar:///home/coalman/.npm/blessed-life/1.0.1/package
+78 silly lockFile b78e69ba-m-blessed-life-1-0-1-package-tgz tar:///home/coalman/.npm/blessed-life/1.0.1/package.tgz
+79 silly lockFile b78e69ba-m-blessed-life-1-0-1-package-tgz tar:///home/coalman/.npm/blessed-life/1.0.1/package.tgz
+80 verbose chmod /home/coalman/.npm/blessed-life/1.0.1/package.tgz 644
+81 verbose chown /home/coalman/.npm/blessed-life/1.0.1/package.tgz [ 1000, 100 ]
+82 silly lockFile 3a52ce78- .
+83 silly lockFile 3a52ce78- .
+84 silly publish { name: 'blessed-life',
+84 silly publish   version: '1.0.1',
+84 silly publish   description: 'A simple game of life simulation using the blessed node module.',
+84 silly publish   keywords: [ 'game', 'life', 'conway', 'simulation', 'blessed' ],
+84 silly publish   main: 'index.js',
+84 silly publish   bin: { 'blessed-life': './bin/runner.js' },
+84 silly publish   directories: { lib: 'lib', example: 'example', bin: 'bin' },
+84 silly publish   dependencies: { blessed: '~0.0.25', commander: '~2.0.0' },
+84 silly publish   author:
+84 silly publish    { name: 'Coalman',
+84 silly publish      email: 'tehcoalman@gmail.com',
+84 silly publish      url: 'http://github.com/Coalman' },
+84 silly publish   repository:
+84 silly publish    { type: 'git',
+84 silly publish      url: 'https://github.com/Coalman/blessed-life.git' },
+84 silly publish   homepage: 'https://github.com/Coalman/blessed-life',
+84 silly publish   preferGlobal: 'true',
+84 silly publish   readme: '# blessed-life\n\nA simple game of life simulation using the blessed node module.',
+84 silly publish   readmeFilename: 'README.md',
+84 silly publish   bugs: { url: 'https://github.com/Coalman/blessed-life/issues' },
+84 silly publish   _id: 'blessed-life@1.0.1',
+84 silly publish   dist: { shasum: '7297438e3fdfcc9a19567f8092b7dab387d5a9bb' },
+84 silly publish   _from: '.' }
+85 verbose url raw blessed-life
+86 verbose url resolving [ 'https://registry.npmjs.org/', './blessed-life' ]
+87 verbose url resolved https://registry.npmjs.org/blessed-life
+88 info trying registry request attempt 1 at 15:28:13
+89 http PUT https://registry.npmjs.org/blessed-life
+90 http 409 https://registry.npmjs.org/blessed-life
+91 verbose url raw blessed-life
+92 verbose url resolving [ 'https://registry.npmjs.org/', './blessed-life' ]
+93 verbose url resolved https://registry.npmjs.org/blessed-life
+94 info trying registry request attempt 1 at 15:28:14
+95 http GET https://registry.npmjs.org/blessed-life
+96 http 200 https://registry.npmjs.org/blessed-life
+97 error publish fail Cannot publish over existing version.
+97 error publish fail Update the 'version' field in package.json and try again.
+97 error publish fail
+97 error publish fail If the previous version was published in error, see:
+97 error publish fail     npm help unpublish
+97 error publish fail
+97 error publish fail To automatically increment version numbers, see:
+97 error publish fail     npm help version
+98 error System Linux 3.10.15-1-MANJARO
+99 error command "node" "/usr/bin/npm" "publish"
+100 error cwd /home/coalman/projects/blessed-life
+101 error node -v v0.10.20
+102 error npm -v 1.3.11
+103 error code EPUBLISHCONFLICT
+104 verbose exit [ 1, true ]

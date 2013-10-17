@@ -11,7 +11,7 @@ var App = require(lib + '/app.js');
 
 process.argv[1] = 'blessed-life';
 program
-	.version('1.0.0')
+	.version('1.0.1')
 	.option('--width <width>', 
 		'specify the width of the grid', parseInt, 0)
 	.option('--height <height>', 
