@@ -1,7 +1,7 @@
 {
   "name": "blessed-life",
   "version": "1.0.0",
-  "description": "A simple game of life simulation using the blessed node module.\"",
+  "description": "A simple game of life simulation using the blessed node module.",
   "keywords": ["game", "life", "conway", "simulation", "blessed"],
   "main": "index.js",
   "bin": {
