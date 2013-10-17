@@ -17,5 +17,10 @@
     "commander": "~2.0.0"
   },
   "author": "Coalman <tehcoalman@gmail.com> (http://github.com/Coalman)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Coalman/blessed-life.git"
+  },
+  "homepage": "https://github.com/Coalman/blessed-life",
   "preferGlobal": "true"
 }
