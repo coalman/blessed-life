@@ -58,6 +58,26 @@ box.setContent(boardRenderer.render(board));
 // Append our box to the screen.
 screen.append(box);
 
+var spawnForm = blessed.form({
+	left: 0,
+	bottom: 0,
+	width: '100%',
+	height: 1,
+	content: "Toggle Position? ",
+	hidden: true
+});
+
+var spawnInput = blessed.textbox({
+	left: spawnForm.content.length,
+	bottom: 0,
+	width: screen.width - spawnForm.content.length,
+	height: 1,
+	hidden: true
+});
+
+screen.append(spawnForm);
+spawnForm.append(spawnInput);
+
 screen.key(['space'], function(ch, key) {
 	if (!ticker.running) {
 		game.tick();
@@ -66,8 +86,34 @@ screen.key(['space'], function(ch, key) {
 	}
 });
 
-screen.key(['enter'], function(ch, key) {
+screen.key(['p'], function(ch, key) {
 	ticker.toggle();
+});
+
+screen.key(['i'], function(ch, key) {
+	if (ticker.running) {
+		ticker.stop();
+	}
+	
+	spawnForm.show();
+	spawnInput.show();
+	spawnInput.readInput(function onDone(err, value) {
+		spawnForm.hide();
+		spawnInput.hide();
+		spawnInput.setValue('');
+
+		value = value.split(',');
+		var x = parseInt(value[0]);
+		var y = parseInt(value[1]);
+		if (game.board.isInBounds(x, y)) {
+			game.board.setCell(x, y,
+				!game.board.isAlive(x, y));
+			box.setContent(boardRenderer.render(game.board));
+		}
+
+		screen.render();
+	});
+	screen.render();
 });
 
 // Quit on Escape, q, or Control-C.
@@ -76,7 +122,8 @@ screen.key(['escape', 'q', 'C-c'], function(ch, key) {
 });
 
 // Focus our element.
-box.focus();
+//box.focus();
+//spawnInput.focus();
 
 // Render the screen.
 screen.render();
