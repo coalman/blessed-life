@@ -1,11 +1,11 @@
 {
   "name": "blessed-life",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple game of life simulation using the blessed node module.",
   "keywords": ["game", "life", "conway", "simulation", "blessed"],
   "main": "index.js",
   "bin": {
-    "blessed-life": "runner.js"
+    "blessed-life": "./bin/runner.js"
   },
   "directories": {
     "lib": "lib",
