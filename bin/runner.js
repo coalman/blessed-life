@@ -18,6 +18,8 @@ program
 	.option('--livecell <ch>', 'specify the char to use for live cells')
 	.option('--deadcell <ch>', 'specify the char to use for dead cells')
 	.option('-c, --config <path>', 'specify the config file to read from')
+	.option('-a, --autostart', 
+		'whether or not to automatically start the simulation')
 	.parse(process.argv);
 var config = {
 	width: program.width,
@@ -102,6 +104,9 @@ function onTick() {
 }
 
 var ticker = new Ticker(250, onTick);
+if (program.autostart) {
+	ticker.start();
+}
 
 screen.key(['space'], function(ch, key) {
 	if (!ticker.running) {
