@@ -1,0 +1,21 @@
+{
+  "name": "blessed-life",
+  "version": "1.0.0",
+  "description": "A simple game of life simulation using the blessed node module.\"",
+  "keywords": ["game", "life", "conway", "simulation", "blessed"],
+  "main": "index.js",
+  "bin": {
+    "blessed-life": "runner.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "example": "example",
+    "bin": "bin"
+  },
+  "dependencies": {
+    "blessed": "~0.0.25",
+    "commander": "~2.0.0"
+  },
+  "author": "Coalman <tehcoalman@gmail.com> (http://github.com/Coalman)",
+  "preferGlobal": "true"
+}

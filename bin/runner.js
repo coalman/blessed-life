@@ -5,14 +5,12 @@ var blessed = require('blessed');
 var fs = require('fs');
 var path = require('path');
 var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
-var Game = require(lib + '/game.js');
-var Board = require(lib + '/board.js');
-var StringRenderer = require(lib + '/string_renderer');
 var Ticker = require(lib + '/ticker.js');
 var App = require(lib + '/app.js');
 
+process.argv[1] = 'blessed-life';
 program
-	.version('0.0.0')
+	.version('1.0.0')
 	.option('--width <width>', 
 		'specify the width of the grid', parseInt, 0)
 	.option('--height <height>', 
