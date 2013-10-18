@@ -45,7 +45,7 @@ if (program.config) {
 	config.liveCells = configData.liveCells;
 }
 if (!config.liveCell) {
-	config.liveCell = '0';
+	config.liveCell = '█';
 }
 if (!config.deadCell) {
 	config.deadCell = ' ';

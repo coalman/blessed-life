@@ -1,7 +1,7 @@
 {
 	"width": 17,
 	"height": 6,
-	"liveCell": "0",
+	"liveCell": "█",
 	"deadCell": " ",
 	"liveCells": [
 		[2, 1]
