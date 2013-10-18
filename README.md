@@ -33,8 +33,10 @@ There are many command line switches that can be used (use `-h` or `--help` for 
 
     $ blessed-life -c example/glider.json
 
-Make sure the value for this switch is a valid path.
+Make sure the value for this switch is a valid path. An [asciicast][asciinema] can be found [here][asciicast].
 
   [commander]: https://npmjs.org/package/commander
   [blessed]: https://npmjs.org/package/blessed
   [nodejs]: http://nodejs.org/
+  [asciinema]: http://asciinema.org
+  [asciicast]: http://asciinema.org/a/5984
