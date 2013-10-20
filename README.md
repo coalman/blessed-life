@@ -1,7 +1,7 @@
 blessed-life
 ============
 
-This is a simple simulation of Conway's game of life. It's writtin in javascript for nodejs and targets the command line. It utilizes the following nodejs modules:
+This is a simple simulation of Conway's game of life. It's written in javascript for nodejs and targets the command line. It utilizes the following nodejs modules:
 
  - [commander] for the command-line interface.
  - [blessed]: a curses-like library.
