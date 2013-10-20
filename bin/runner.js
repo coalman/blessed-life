@@ -21,6 +21,8 @@ program
 	.option('-c, --config <path>', 'specify the config file to read from')
 	.option('-a, --autostart', 
 		'whether or not to automatically start the simulation')
+	.option('--fg <color>', 'specify the foreground color of the simulation.')
+	.option('--bg <color>', 'specify the background color of the simulation.')
 	.parse(process.argv);
 var config = {
 	width: program.width,
@@ -28,6 +30,8 @@ var config = {
 	liveCell: program.livecell,
 	deadCell: program.deadcell,
 	speed: program.speed,
+	fg: program.fg,
+	bg: program.bg,
 	liveCells: []
 };
 
@@ -47,6 +51,12 @@ if (program.config) {
 	if (!config.speed) {
 		config.speed = configData.speed;
 	}
+	if (!config.fg) {
+		config.fg = configData.fg;
+	}
+	if (!config.bg) {
+		config.bg = configData.bg;
+	}
 	config.liveCells = configData.liveCells;
 }
 if (!config.liveCell) {
@@ -57,6 +67,12 @@ if (!config.deadCell) {
 }
 if (!config.speed) {
 	config.speed = 250;
+}
+if (!config.fg) {
+	config.fg = 'white';
+}
+if (!config.bg) {
+	config.bg = 'black';
 }
 
 var screen = blessed.screen();
@@ -79,8 +95,8 @@ var box = blessed.box({
   content: app.renderBoard(),
   tags: true,
   style: {
-    fg: 'white',
-    bg: 'black'
+    fg: config.fg,
+    bg: config.bg
   }
 });
 screen.append(box);
