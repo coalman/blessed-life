@@ -10,24 +10,29 @@ var Ticker = require(lib + '/ticker.js');
 var App = require(lib + '/app.js');
 
 program._name = 'blessed-life';
-program
+program.usage('[options] <config>')
 	.option('--width <width>', 
 		'specify the width of the grid', parseInt)
 	.option('--height <height>', 
 		'specify the height of the grid', parseInt)
-	.option('--livecell <ch>', 'specify the char to use for live cells')
-	.option('--deadcell <ch>', 'specify the char to use for dead cells')
-	.option('--speed <speed>', 'specify the speed in milliseconds for each tick')
-	.option('-c, --config <path>', 'specify the config file to read from')
+	.option('--livecell <ch>', 
+		'specify the char to use for live cells')
+	.option('--deadcell <ch>', 
+		'specify the char to use for dead cells')
+	.option('--fg <color>', 
+		'specify the foreground color of the simulation.')
+	.option('--bg <color>', 
+		'specify the background color of the simulation.')
+	.option('--speed <speed>', 
+		'specify the speed in milliseconds for each tick')
 	.option('-a, --autostart', 
 		'whether or not to automatically start the simulation')
-	.option('--fg <color>', 'specify the foreground color of the simulation.')
-	.option('--bg <color>', 'specify the background color of the simulation.')
 	.parse(process.argv);
+	console.log(program);
 var configFile = {};
-if (program.config) {
-	program.config = path.resolve(program.config);
-	var json = fs.readFileSync(program.config, { encoding: 'utf-8' });
+if (program.args.length > 0) {
+	var configPath = path.resolve(program.args[0]);
+	var json = fs.readFileSync(configPath, { encoding: 'utf-8' });
 	configFile = JSON.parse(json);
 }
 var config = {
