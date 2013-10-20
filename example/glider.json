@@ -1,8 +1,8 @@
 {
 	"width": 0,
 	"height": 0,
-	"liveCell": "0",
-	"deadCell": " ",
+	"livecell": "0",
+	"deadcell": " ",
 	"liveCells": [
 		[0, 1]
 	,	[1, 2]

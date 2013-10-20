@@ -38,8 +38,8 @@ if (program.args.length > 0) {
 var config = {
 	width: (!isNaN(program.width) ? program.width : configFile.width || 0),
 	height: (!isNaN(program.height) ? program.height : configFile.height || 0),
-	liveCell: program.livecell || configFile.liveCell || '█',
-	deadCell: program.deadcell || configFile.deadCell || ' ',
+	liveCell: program.livecell || configFile.livecell || '█',
+	deadCell: program.deadcell || configFile.deadcell || ' ',
 	speed: program.speed || configFile.speed || 250,
 	fg: program.fg || configFile.fg || 'white',
 	bg: program.bg || configFile.bg || 'black',
