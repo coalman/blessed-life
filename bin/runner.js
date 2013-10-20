@@ -12,9 +12,9 @@ var App = require(lib + '/app.js');
 program._name = 'blessed-life';
 program
 	.option('--width <width>', 
-		'specify the width of the grid', parseInt, 0)
+		'specify the width of the grid', parseInt)
 	.option('--height <height>', 
-		'specify the height of the grid', parseInt, 0)
+		'specify the height of the grid', parseInt)
 	.option('--livecell <ch>', 'specify the char to use for live cells')
 	.option('--deadcell <ch>', 'specify the char to use for dead cells')
 	.option('--speed <speed>', 'specify the speed in milliseconds for each tick')
@@ -24,65 +24,27 @@ program
 	.option('--fg <color>', 'specify the foreground color of the simulation.')
 	.option('--bg <color>', 'specify the background color of the simulation.')
 	.parse(process.argv);
-var config = {
-	width: program.width,
-	height: program.height,
-	liveCell: program.livecell,
-	deadCell: program.deadcell,
-	speed: program.speed,
-	fg: program.fg,
-	bg: program.bg,
-	liveCells: []
-};
-
+var configFile = {};
 if (program.config) {
 	program.config = path.resolve(program.config);
 	var json = fs.readFileSync(program.config, { encoding: 'utf-8' });
-	var configData = JSON.parse(json);
-
-	config.width = configData.width;
-	config.height = configData.height;
-	if (!config.liveCell) {
-		config.liveCell = configData.liveCell;
-	}
-	if (!config.deadCell) {
-		config.deadCell = configData.deadCell;
-	}
-	if (!config.speed) {
-		config.speed = configData.speed;
-	}
-	if (!config.fg) {
-		config.fg = configData.fg;
-	}
-	if (!config.bg) {
-		config.bg = configData.bg;
-	}
-	config.liveCells = configData.liveCells;
+	configFile = JSON.parse(json);
 }
-if (!config.liveCell) {
-	config.liveCell = '█';
-}
-if (!config.deadCell) {
-	config.deadCell = ' ';
-}
-if (!config.speed) {
-	config.speed = 250;
-}
-if (!config.fg) {
-	config.fg = 'white';
-}
-if (!config.bg) {
-	config.bg = 'black';
-}
+var config = {
+	width: (!isNaN(program.width) ? program.width : configFile.width || 0),
+	height: (!isNaN(program.height) ? program.height : configFile.height || 0),
+	liveCell: program.livecell || configFile.liveCell || '█',
+	deadCell: program.deadcell || configFile.deadCell || ' ',
+	speed: program.speed || configFile.speed || 250,
+	fg: program.fg || configFile.fg || 'white',
+	bg: program.bg || configFile.bg || 'black',
+	liveCells: configFile.liveCells || []
+};
 
 var screen = blessed.screen();
 
-if (config.width === 0) {
-	config.width = screen.width;
-}
-if (config.height === 0) {
-	config.height = screen.height;
-}
+config.width = config.width || screen.width;
+config.height = config.height || screen.height;
 
 var app = new App(config);
 
