@@ -35,8 +35,14 @@ There are many command line switches that can be used (use `-h` or `--help` for 
 
 Make sure the value for this switch is a valid path. An [asciicast][asciinema] can be found [here][asciicast].
 
+### Further Reading
+
+If you want to know a bit more about blessed-life, visit the [wiki]. Also, feel free to read more about [Conway's game of life][gof] if you're interested in the theory.
+
   [commander]: https://npmjs.org/package/commander
   [blessed]: https://npmjs.org/package/blessed
   [nodejs]: http://nodejs.org/
   [asciinema]: http://asciinema.org
   [asciicast]: http://asciinema.org/a/5984
+  [wiki]: https://github.com/Coalman/blessed-life/wiki
+  [gof]: http://en.wikipedia.org/wiki/Conway's_Game_of_Life
