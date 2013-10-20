@@ -17,6 +17,7 @@ program
 		'specify the height of the grid', parseInt, 0)
 	.option('--livecell <ch>', 'specify the char to use for live cells')
 	.option('--deadcell <ch>', 'specify the char to use for dead cells')
+	.option('--speed <speed>', 'specify the speed in milliseconds for each tick')
 	.option('-c, --config <path>', 'specify the config file to read from')
 	.option('-a, --autostart', 
 		'whether or not to automatically start the simulation')
@@ -26,6 +27,7 @@ var config = {
 	height: program.height,
 	liveCell: program.livecell,
 	deadCell: program.deadcell,
+	speed: program.speed,
 	liveCells: []
 };
 
@@ -42,6 +44,9 @@ if (program.config) {
 	if (!config.deadCell) {
 		config.deadCell = configData.deadCell;
 	}
+	if (!config.speed) {
+		config.speed = configData.speed;
+	}
 	config.liveCells = configData.liveCells;
 }
 if (!config.liveCell) {
@@ -49,6 +54,9 @@ if (!config.liveCell) {
 }
 if (!config.deadCell) {
 	config.deadCell = ' ';
+}
+if (!config.speed) {
+	config.speed = 250;
 }
 
 var screen = blessed.screen();
@@ -103,7 +111,7 @@ function onTick() {
 	screen.render();
 }
 
-var ticker = new Ticker(250, onTick);
+var ticker = new Ticker(config.speed, onTick);
 if (program.autostart) {
 	ticker.start();
 }
