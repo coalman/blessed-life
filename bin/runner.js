@@ -28,7 +28,6 @@ program.usage('[options] <config>')
 	.option('-a, --autostart', 
 		'whether or not to automatically start the simulation')
 	.parse(process.argv);
-	console.log(program);
 var configFile = {};
 if (program.args.length > 0) {
 	var configPath = path.resolve(program.args[0]);
