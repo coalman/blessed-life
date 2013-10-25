@@ -120,18 +120,19 @@ screen.key(['i'], function(ch, key) {
 		spawnInput.hide();
 		spawnInput.setValue('');
 
-		value = value.split(/,|;/);
-		for (var i = 0; i < value.length / 2; i++) {
-			var x = parseInt(value[i * 2]);
-			var y = parseInt(value[(i * 2) + 1]);
+		if (value !== null) {
+			value = value.split(/,|;/);
+			for (var i = 0; i < value.length / 2; i++) {
+				var x = parseInt(value[i * 2]);
+				var y = parseInt(value[(i * 2) + 1]);
 
-			if (app.game.board.isInBounds(x, y)) {
-				app.game.board.toggleCell(x, y);
+				if (app.game.board.isInBounds(x, y)) {
+					app.game.board.toggleCell(x, y);
 
+				}
 			}
+			box.setContent(app.renderBoard());
 		}
-		box.setContent(app.renderBoard());
-
 		screen.render();
 	});
 	screen.render();
